@@ -1,15 +1,16 @@
 #include <stdio.h>
+#include <time.h>
 #include "rc-switch/RCSwitch.h"
 
 
 int main(int argc, char *argv[]) {
 
-    printf("{\"status\":\"starting\"}\n");
+    printf("{\"timestamp\":%d,\"status\":\"starting\"}\n", (int)time(NULL));
 
     int PIN = 2; // this is pin 13, aka GPIO22 on the PI3, see https://www.element14.com/community/servlet/JiveServlet/previewBody/73950-102-10-339300/pi3_gpio.png
 
     if (wiringPiSetup () == -1) {
-        printf("{\"error\":\"WiringPi not installed.\"}\n");
+        printf("{\"timestamp\":%d,\"error\":\"WiringPi not installed.\"}\n", (int)time(NULL));
         return 1;
     }
 
@@ -21,7 +22,7 @@ int main(int argc, char *argv[]) {
 
     mySwitch.enableReceive(PIN);
 
-    printf("{\"status\":\"listening\"}\n");
+    printf("{\"timestamp\":%d,\"status\":\"listening\"}\n", (int)time(NULL));
 
     while(true) {
 
@@ -30,9 +31,9 @@ int main(int argc, char *argv[]) {
             int value = mySwitch.getReceivedValue();
             
             if (value == 0) {
-                printf("{\"error\":\"unknown encoding\"}\n");
+                printf("{\"timestamp\":%d,\"error\":\"unknown encoding\"}\n", (int)time(NULL));
             } else {
-                printf("{\"value\":%lu,\"bitlength\":%i,\"delay\":%i,\"protocol\":%i}\n", mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedDelay(), mySwitch.getReceivedProtocol() );
+                printf("{\"timestamp\":%d,\"value\":%lu,\"bitlength\":%i,\"delay\":%i,\"protocol\":%i}\n", (int)time(NULL), mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedDelay(), mySwitch.getReceivedProtocol() );
             }
 
             mySwitch.resetAvailable();
