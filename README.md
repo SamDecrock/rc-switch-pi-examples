@@ -22,8 +22,17 @@ To use rc-switch on the Pi, you need WiringPi
 	cd wiringPi
 	./build
 
+## Get these examples
+
+If you haven't downloaded these examples yet, you can clone them using
+	
+	cd ~/
+	git clone https://github.com/SamDecrock/rc-switch-pi-examples.git
+	cd rc-switch-pi-examples
 
 ## Get rc-switch
+
+To run compile these examples, you need the rc-switch library.
 
 From this folder, run
 
