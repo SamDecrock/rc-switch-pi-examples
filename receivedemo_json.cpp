@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
             if (value == 0) {
                 printf("{\"error\":\"unknown encoding\"}\n");
             } else {
-                printf("{\"value\":%ld,\"bitlength\":%i,\"delay\":%i,\"protocol\":%i}\n", mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedDelay(), mySwitch.getReceivedProtocol() );
+                printf("{\"value\":%lu,\"bitlength\":%i,\"delay\":%i,\"protocol\":%i}\n", mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedDelay(), mySwitch.getReceivedProtocol() );
             }
 
             mySwitch.resetAvailable();

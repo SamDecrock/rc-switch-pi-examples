@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
             if (value == 0) {
                 printf("Unknown encoding\n");
             } else {
-                printf("Received %ld / %i bit Protocol: %i\n", mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedProtocol());
+                printf("Received %lu / %i bit Protocol: %i\n", mySwitch.getReceivedValue(), mySwitch.getReceivedBitlength(), mySwitch.getReceivedProtocol());
             }
 
             mySwitch.resetAvailable();
