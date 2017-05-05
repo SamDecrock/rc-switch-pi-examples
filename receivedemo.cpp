@@ -45,5 +45,7 @@ int main(int argc, char *argv[]) {
 
             mySwitch.resetAvailable();
         }
+
+        delay(100);
     }
 }
