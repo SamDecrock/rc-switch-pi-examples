@@ -5,6 +5,7 @@ rc-switch is a library to operate 433/315Mhz devices like power outlet sockets. 
 
 This github repo shows some simple examples that are very much like the Arduino examples.
 
+**If you just want to run the examples without compiling, take a look inside the /bin folder.**
 
 ## Install Git
 
